@@ -5,6 +5,7 @@
   },
   "dependencies": {
     "bcryptjs": "^3.0.2",
+    "dayjs": "^1.11.13",
     "hono": "^4.7.4"
   },
   "devDependencies": {
