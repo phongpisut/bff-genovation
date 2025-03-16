@@ -1,4 +1,7 @@
 # deps
 node_modules/
 .qodo
-pb/
+pb/pocketbase
+pb/pocketbase.exe
+pb/*.zip
+pb/*.md

@@ -1,12 +1,20 @@
 {
   "name": "bff-genovation",
   "scripts": {
-    "dev": "bun run --hot src/index.ts"
+    "dev": "bun run --hot src/index.ts",
+    "download:mac": "curl -L -o ./pb/pocketbase.zip https://github.com/pocketbase/pocketbase/releases/download/v0.26.1/pocketbase_0.26.1_darwin_amd64.zip",
+    "download:win": "curl -L -o ./pb/pocketbase.zip https://github.com/pocketbase/pocketbase/releases/download/v0.26.1/pocketbase_0.26.1_windows_amd64.zip",
+    "unzip:mac": "unzip -o ./pb/pocketbase.zip -d ./pb",
+    "unzip:win": "powershell -command \"Expand-Archive -LiteralPath './pb/pocketbase.zip' -DestinationPath './pb' -Force\"",
+    "pb:mac": "bun download:mac && bun unzip:mac",
+    "pb:win": "bun download:win && bun unzip:win",
+    "pb:serve": "./pb/pocketbase serve"
   },
   "dependencies": {
     "bcryptjs": "^3.0.2",
     "dayjs": "^1.11.13",
-    "hono": "^4.7.4"
+    "hono": "^4.7.4",
+    "pocketbase": "^0.25.2"
   },
   "devDependencies": {
     "@types/bun": "latest",
